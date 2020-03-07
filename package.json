@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "es6-promisify": "^6.0.2",
-    "kuromoji": "^0.1.2"
+    "kuromoji": "^0.1.2",
+    "moz-readability-node": "^0.2.4"
   }
 }

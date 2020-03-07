@@ -1,5 +1,6 @@
 import { builder } from "kuromoji";
 import { promisify } from "es6-promisify";
+import { Readability } from "moz-readability-node";
 
 const extId = "pnbofikihcljfpncakmppocihbonhegi";
 
@@ -15,8 +16,11 @@ const 自立語 = new Set([
 ]);
 
 export async function main(document) {
-  const r = await tokenize(document.body.textContent);
-  console.debug(r);
+  const { content } = new Readability(document).parse();
+  const tmp = document.createElement("div");
+  tmp.innerHTML = content;
+  const r = await tokenize(tmp.textContent);
+  // console.debug(r);
   return r;
 }
 
@@ -36,6 +40,6 @@ async function tokenize(str: string) {
     else acc[acc.length - 1] += feat.surface_form;
     prev = feat.jiritu;
   }
-  console.debug(feats);
+  // console.debug(feats);
   return acc;
 }
