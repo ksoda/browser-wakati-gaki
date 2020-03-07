@@ -1,0 +1,10 @@
+node_modules
+build
+secrets.*.js
+
+*.bs.js
+
+.merlin
+
+lib/bs
+src/dict/
