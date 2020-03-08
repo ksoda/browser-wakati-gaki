@@ -1,6 +1,8 @@
 MIT License
 
-Copyright (c) 2016 Samuel Simões, ksoda
+Copyright (c) 2020 ksoda
+Copyright (c) 2016 Samuel Simões
+Copyright (c) 2014 Luke Haas
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
