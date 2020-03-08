@@ -15,6 +15,6 @@
       "all_frames": false
     }
   ],
-  "permissions": [],
+  "permissions": ["activeTab"],
   "web_accessible_resources": ["dict/*.dat.gz"]
 }
