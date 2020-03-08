@@ -1,7 +1,7 @@
 {
   "name": "word-divider",
   "version": "0.0.1",
-  "description": "A boilerplate to chrome extension with webpack",
+  "description": "work with Spreed (speed read the web)",
   "scripts": {
     "build": "ts-node utils/build.ts",
     "start": "ts-node utils/webserver.ts"

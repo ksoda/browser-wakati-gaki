@@ -1,13 +1,10 @@
 {
-  "name": "Chrome Extension Webpack",
+  "name": "Wakati Gaki",
   "options_page": "options.html",
   "browser_action": {
-    "default_popup": "popup.html",
-    "default_icon": "icon-34.png"
+    "default_popup": "popup.html"
   },
-  "icons": {
-    "128": "icon-128.png"
-  },
+  "icons": {},
   "manifest_version": 2,
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "content_scripts": [
