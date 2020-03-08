@@ -79,7 +79,6 @@ const options = {
         {
           from: "src/manifest.json",
           transform: function(content, path) {
-            console.log({ content: content.toString() });
             // generates the manifest file using the package.json informations
             return Buffer.from(
               JSON.stringify({
