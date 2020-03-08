@@ -74,22 +74,26 @@ const options = {
     new CleanWebpackPlugin(),
     // expose and write the allowed env vars on the compiled bundle
     new webpack.EnvironmentPlugin(["NODE_ENV"]),
-    new CopyWebpackPlugin([
-      {
-        from: "src/manifest.json",
-        transform: function(content, path) {
-          // generates the manifest file using the package.json informations
-          return Buffer.from(
-            JSON.stringify({
-              description: process.env.npm_package_description,
-              version: process.env.npm_package_version,
-              ...JSON.parse(content.toString())
-            })
-          );
-        }
-      },
-      { from: path.join(__dirname, "src", "dict"), to: "dict" }
-    ]),
+    new CopyWebpackPlugin(
+      [
+        {
+          from: "src/manifest.json",
+          transform: function(content, path) {
+            console.log({ content: content.toString() });
+            // generates the manifest file using the package.json informations
+            return Buffer.from(
+              JSON.stringify({
+                description: process.env.npm_package_description,
+                version: process.env.npm_package_version,
+                ...JSON.parse(content.toString())
+              })
+            );
+          }
+        },
+        { from: path.join(__dirname, "src", "dict"), to: "dict" }
+      ],
+      { copyUnmodified: true }
+    ),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "popup.html"),
       filename: "popup.html",
